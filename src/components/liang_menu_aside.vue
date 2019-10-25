@@ -1,46 +1,60 @@
 <template>
     <div>
-        <el-menu
-                default-active="2"
-                class="el-menu-vertical-demo"
-                @open="handleOpen"
-                @close="handleClose"
-                background-color="#161823"
+        <!--background-color="#161823"-->
+        <!--text-color="#fff"-->
+        <!--active-text-color="#ffd04b"-->
+        <!--default-openeds="1"-->
+        <!--@open="handleOpen"-->
+        <!--@close="handleClose"-->
+        {{defaultAcitve}}
+        <el-menu :default-active="defaultAcitve"
+                 :collapse="asideCollapse"
+                background-color="#545c64"
                 text-color="#fff"
-                active-text-color="#ffd04b">
-            <el-submenu index="1">
+                active-text-color="#ffd04b"
+                v-for="item in menuAsideList"
+                :key="item.id"
+        >
+
+            <el-submenu v-if="item.submenus" :index="item.powerCode" >
                 <template slot="title">
-                    <i class="el-icon-location"></i>
-                    <span>导航一</span>
+                    <i v-if="item.iconName" :class="item.iconName"></i>
+                    <span>{{item.powerName}}</span>
                 </template>
-                <el-menu-item-group>
-                    <template slot="title">分组一</template>
-                    <el-menu-item index="1-1">选项1</el-menu-item>
-                    <el-menu-item index="1-2">选项2</el-menu-item>
-                </el-menu-item-group>
-                <el-menu-item-group title="分组2">
-                    <el-menu-item index="1-3">选项3</el-menu-item>
-                </el-menu-item-group>
-                <el-submenu index="1-4">
-                    <template slot="title">选项4</template>
-                    <el-menu-item index="1-4-1">选项1</el-menu-item>
-                </el-submenu>
+                <el-menu-item v-for="subItem in item.submenus" :index="subItem.powerCode" @click="handleClickMenu(subItem.powerCode)">{{subItem.powerName}}</el-menu-item>
             </el-submenu>
-            <el-menu-item index="2">
-                <i class="el-icon-menu"></i>
-                <span slot="title">导航二</span>
-            </el-menu-item>
-            <el-menu-item index="4">
-                <i class="el-icon-setting"></i>
-                <span slot="title">导航四</span>
+            <el-menu-item v-else :index="item.powerCode"  @click="handleClickMenu(item.powerCode)">
+                <i v-if="item.iconName" :class="item.iconName"></i>
+                <span slot="title">{{item.powerName}}</span>
             </el-menu-item>
         </el-menu>
     </div>
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
-        name: "liang_menu_aside"
+        name: "liang_menu_aside",
+        computed: {
+            ...mapState({
+                asideCollapse: state => state.user.asideCollapse, //菜单导航收起展开方式
+                menuAsideList: state => state.user.menuAsideList, //左侧管理菜单导航
+                defaultAcitve: state => state.user.defaultAcitve, //左侧管理菜单导航默认高亮
+            })
+        },
+        methods:{
+            handleOpen(key, keyPath) {
+                console.log(key, keyPath);
+            },
+            handleClose(key, keyPath) {
+                console.log(key, keyPath);
+            },
+            handleClickMenu(name){
+                // this.$router.push({name:name});
+                this.$store.commit('setDefaultAcitve',name);
+                console.log(name);
+            },
+        }
     }
 </script>
 

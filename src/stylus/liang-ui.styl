@@ -6,7 +6,6 @@ body
     font-family 'Avenir', Helvetica, Arial, sans-serif
     -webkit-font-smoothing antialiased
     -moz-osx-font-smoothing grayscale
-    text-align center
     color #2c3e50
     position absolute
     top 0
@@ -39,6 +38,11 @@ body
         height 100%
         box-shadow 2px 0 8px rgba(0, 0, 0, 0.05)
         background #fff
+        .el-menu-item
+            text-align left
+        .el-submenu
+            .el-menu-item
+                min-width 159px
     .liang-right-aside
         flex 1
         position relative
