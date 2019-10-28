@@ -15,13 +15,12 @@
                 v-for="item in menuAsideList"
                 :key="item.id"
         >
-
             <el-submenu v-if="item.submenus" :index="item.powerCode" >
                 <template slot="title">
                     <i v-if="item.iconName" :class="item.iconName"></i>
                     <span>{{item.powerName}}</span>
                 </template>
-                <el-menu-item v-for="subItem in item.submenus" :index="subItem.powerCode" @click="handleClickMenu(subItem.powerCode)">{{subItem.powerName}}</el-menu-item>
+                <el-menu-item v-for="subItem in item.submenus" :key="subItem.powerCode" :index="subItem.powerCode" @click="handleClickMenu(subItem.powerCode)">{{subItem.powerName}}</el-menu-item>
             </el-submenu>
             <el-menu-item v-else :index="item.powerCode"  @click="handleClickMenu(item.powerCode)">
                 <i v-if="item.iconName" :class="item.iconName"></i>

@@ -8,7 +8,14 @@ const routes = [
   {
     path: '/',
     name: 'index',
-    component: index
+    component: index,
+    children:[
+      // {
+      //   path: '/workbench',
+      //   name: 'workbench',
+      //   component: () => import('../views/workBench.vue')
+      // },
+    ]
   },
   {
     path: '/about',
