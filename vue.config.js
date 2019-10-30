@@ -49,6 +49,7 @@ module.exports = {
     lintOnSave: false,   // 取消 eslint 验证
     runtimeCompiler: true,
     publicPath: '/', // 设置打包文件相对路径
+    productionSourceMap: false,  // 设置上线后是否加载webpack文件
     devServer: {
         // overlay: { // 让浏览器 overlay 同时显示警告和错误
         //   warnings: true,
