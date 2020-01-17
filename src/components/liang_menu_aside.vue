@@ -6,16 +6,16 @@
         <!--default-openeds="1"-->
         <!--@open="handleOpen"-->
         <!--@close="handleClose"-->
-        {{defaultAcitve}}
         <el-menu :default-active="defaultAcitve"
                  :collapse="asideCollapse"
-                background-color="#545c64"
-                text-color="#fff"
-                active-text-color="#ffd04b"
-                v-for="item in menuAsideList"
-                :key="item.id"
+                 unique-opened="true"
+                 background-color="transparent"
+                 text-color="#fff"
+                 active-text-color="#ffd04b"
+                 v-for="item in menuAsideList"
+                 :key="item.id"
         >
-            <el-submenu v-if="item.submenus" :index="item.powerCode" >
+            <el-submenu v-if="item.submenus" popper-class="liang-submenu" :index="item.powerCode" >
                 <template slot="title">
                     <i v-if="item.iconName" :class="item.iconName"></i>
                     <span>{{item.powerName}}</span>

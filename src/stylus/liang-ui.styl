@@ -22,8 +22,9 @@ body
     position relative
     display flex
     width 100%
-    height 50px
+    height 60px
     box-shadow 0 0 8px 0 rgba(0, 0, 0, 0.06)
+    background linear-gradient(220deg, #39126C 0%, #06012F 100%)
     z-index 10
 .liang-content-main
     position relative
@@ -34,12 +35,36 @@ body
     overflow hidden
     .liang-left-aside
         display block
-        width 160px
+        max-width 160px
+        min-width 65px
         height 100%
         box-shadow 2px 0 8px rgba(0, 0, 0, 0.05)
-        background #fff
+        background linear-gradient( #0e0f1a 0%, #06012F 100%);
+        overflow-y auto
+        &::-webkit-scrollbar
+            display block
+        &::-webkit-scrollbar
+            width 4px
+            height 4px
+            box-sizing border-box
+            display none
+        &::-webkit-scrollbar-thumb
+            border-radius 5px
+            -webkit-box-shadow inset 0 0 5px rgba(0,0,0,0.2)
+            background rgba(0,0,0,.2)
+        &::-webkit-scrollbar-track
+            -webkit-box-shadow inset 0 0 5px rgba(0,0,0,0.2)
+            border-radius 0
+            background rgba(0,0,0,0.1)
+        .el-menu
+            width 160px
+            border none
+        .el-menu--collapse
+            width 64px
         .el-menu-item
             text-align left
+            &.is-active
+                border-left 4px solid #99d953
         .el-submenu
             .el-menu-item
                 min-width 159px
@@ -47,3 +72,5 @@ body
         flex 1
         position relative
         overflow hidden
+.liang-submenu
+    background linear-gradient( #0e0f1a 0%, #06012F 100%)
