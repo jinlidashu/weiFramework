@@ -3,11 +3,22 @@
  */
 import {fetch, fetchGet} from './config'
 
-export default {
-    /**
-     * getDemo
-     * phoneNum
-     */
-    getDemo:params => fetch('/getDemo',params),
-    getTest:params => fetch('/getTest',params),
-}
+
+export const getDemo = params => fetch('/getDemo',params)
+
+// export default {
+//     getDemo:params => fetch('/getDemo',params),
+//     getTest:params => fetch('/getTest',params),
+// }
+
+// export function getQuerypunch(params) {
+//     return fetch('/getDemo',params)
+// }
+
+// export function getQuerypunch(data) {
+//     return request({
+//         url: '/getDemo',
+//         method: 'post',
+//         data
+//     })
+// }
