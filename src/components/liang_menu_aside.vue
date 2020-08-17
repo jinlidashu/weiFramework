@@ -1,17 +1,19 @@
 <template>
     <div>
+        <div class="liang-header-title">weiFramework</div>
         <!--background-color="#161823"-->
         <!--text-color="#fff"-->
         <!--active-text-color="#ffd04b"-->
         <!--default-openeds="1"-->
         <!--@open="handleOpen"-->
         <!--@close="handleClose"-->
+<!--        background-color="#000c17"-->
         <el-menu :default-active="defaultAcitve"
                  :collapse="asideCollapse"
                  unique-opened="true"
-                 background-color="transparent"
-                 text-color="#fff"
-                 active-text-color="#ffd04b"
+                 background-color="#001529"
+                 text-color="hsla(0,0%,100%,.65)"
+                 active-text-color="#fff"
                  v-for="item in menuAsideList"
                  :key="item.id"
         >
@@ -57,6 +59,12 @@
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="stylus">
+    .liang-header-title
+        width 120px
+        color #fff
+        height 60px
+        line-height 60px
+        /*margin 0 20px*/
+        /*float left*/
 </style>

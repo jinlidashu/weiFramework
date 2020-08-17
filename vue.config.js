@@ -1,7 +1,7 @@
 /**
  * Created by liweiliang 406320591@QQ.com on 2019/10/22 0022 17:03.
  */
-
+const IS_PROD = ["production", "uat"].includes(process.env.NODE_ENV);
 const path = require('path');
 const resolve = (dir) => path.join(__dirname, dir);
 module.exports = {
@@ -48,7 +48,9 @@ module.exports = {
 
     lintOnSave: false,   // 取消 eslint 验证
     runtimeCompiler: true,
-    publicPath: '/', // 设置打包文件相对路径
+    publicPath: IS_PROD ? process.env.VUE_APP_PUBLIC_PATH : "/", // 设置打包文件相对路径
+    // outputDir: `dist-${process.env.NODE_ENV}`,
+    // assetsDir: "", // 相对于outputDir的静态资源(js、css、img、fonts)目录
     productionSourceMap: false,  // 设置上线后是否加载webpack文件
     devServer: {
         // overlay: { // 让浏览器 overlay 同时显示警告和错误
