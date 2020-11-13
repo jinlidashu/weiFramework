@@ -1,0 +1,100 @@
+body
+    margin 0
+    height 100%
+    font-family Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif
+#app
+    font-family 'Avenir', Helvetica, Arial, sans-serif
+    -webkit-font-smoothing antialiased
+    -moz-osx-font-smoothing grayscale
+    color #2c3e50
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+.liang-layout
+    position relative
+    display flex
+    min-width 100%
+    height 100%
+    background #fff
+    overflow hidden
+    .liang-left-aside
+        display block
+        max-width 160px
+        min-width 65px
+        height 100%
+        box-shadow 2px 0 8px rgba(0, 0, 0, 0.05)
+        //background linear-gradient( #0e0f1a 0%, #06012F 100%);
+        background #001529;
+        overflow-y auto
+        &::-webkit-scrollbar
+            display block
+        &::-webkit-scrollbar
+            width 4px
+            height 4px
+            box-sizing border-box
+            display none
+        &::-webkit-scrollbar-thumb
+            border-radius 5px
+            -webkit-box-shadow inset 0 0 5px rgba(0,0,0,0.2)
+            background rgba(0,0,0,.2)
+        &::-webkit-scrollbar-track
+            -webkit-box-shadow inset 0 0 5px rgba(0,0,0,0.2)
+            border-radius 0
+            background rgba(0,0,0,0.1)
+        .el-menu
+            width 160px
+            border none
+            background #000c17
+            .el-submenu__title
+                color #fff !important
+        .el-menu--collapse
+            width 64px
+
+            .el-menu-item,.el-submenu__title
+                [class^=el-icon-]
+                    font-size 18px
+
+        .el-submenu
+            [class^=el-icon-]
+                font-size 14px
+
+            .el-menu-item
+                min-width 159px
+                padding-left 48px !important
+                background #000c17 !important
+
+        .el-menu-item,.el-submenu__title
+            text-align left
+            height 40px
+            line-height 40px
+            [class^=el-icon-]
+                font-size 14px
+            &.is-active
+                //border-left 4px solid #99d953
+                background-color #1890ff !important
+            &:hover
+                color #fff !important
+    .liang-right-aside
+        flex 1
+        position relative
+        overflow hidden
+        .liang-top-aside
+            position relative
+            display flex
+            width 100%
+            height 48px
+            box-shadow 0 0 8px 0 rgba(0, 0, 0, 0.06)
+            //background linear-gradient(220deg, #39126C 0%, #06012F 100%)
+            z-index 10
+        .liang-content-main
+            position relative
+            display flex
+            width 100%
+            height 100%
+            background #F7F9FC
+            overflow hidden
+
+.liang-submenu
+    background linear-gradient( #0e0f1a 0%, #06012F 100%)

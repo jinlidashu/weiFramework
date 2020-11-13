@@ -7,19 +7,20 @@
 const state = {
     asideCollapse:false,//菜单导航收起展开方式
     menuAsideList:[
-        {id: 1,powerCode: 'fixManage',powerName:'系统管理',iconName:'el-icon-setting',
+        {id: 1,powerCode: 'home', powerName: '首页',iconName:'el-icon-eleme'},
+        {id: 4,powerCode: 'fixManage',powerName:'系统管理',iconName:'el-icon-setting',
             submenus:[
-                {id: 101,powerCode: '101',powerName: '选项1'},
-                {id: 102,powerCode: '102',powerName: '选项2'},
-                {id: 103,powerCode: '103',powerName: '选项3'},
+                {id: 401,powerCode: '101',powerName: '选项1'},
+                {id: 402,powerCode: '102',powerName: '选项2'},
+                {id: 403,powerCode: '103',powerName: '选项3'},
             ]
         },
-        {id: 2,powerCode: 'application', powerName: '应用管理',iconName:'el-icon-menu'},
-        {id: 3,powerCode: 'user',powerName: '用户管理',iconName:'el-icon-phone-outline'},
-        {id: 4,powerCode: 'person',powerName: '个人中心',iconName:'el-icon-user',
+        {id: 5,powerCode: 'application', powerName: '应用管理',iconName:'el-icon-menu'},
+        {id: 6,powerCode: 'user',powerName: '用户管理',iconName:'el-icon-phone-outline'},
+        {id: 7,powerCode: 'person',powerName: '个人中心',iconName:'el-icon-user',
             submenus:[
-                {id: 401,powerCode: 'modifyPassword',powerName: '修改密码'},
-                {id: 402,powerCode: 'userInfo',powerName: '个人信息'},
+                {id: 701,powerCode: 'modifyPassword',powerName: '修改密码'},
+                {id: 702,powerCode: 'userInfo',powerName: '个人信息'},
             ]
         },
     ],//左侧管理菜单导航
