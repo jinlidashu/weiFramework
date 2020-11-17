@@ -16,17 +16,18 @@ module.exports = {
     },
     chainWebpack: config => {
         const cdn = {
-            css: ['https://cdn.staticfile.org/element-ui/2.12.0/theme-chalk/index.css'],
+            css: ['https://cdn.staticfile.org/element-ui/2.14.1/theme-chalk/index.min.css'],
             js: [
-                'https://cdn.staticfile.org/vue/2.6.10/vue.min.js',
-                'https://cdn.staticfile.org/vue-router/3.1.3/vue-router.min.js',
-                'https://cdn.staticfile.org/vuex/3.1.1/vuex.min.js',
-                'https://cdn.staticfile.org/axios/0.19.0-beta.1/axios.min.js',
-                'https://cdn.staticfile.org/element-ui/2.12.0/index.js'
+                'https://lib.baomitu.com/vue/2.6.11/vue.min.js',
+                'https://lib.baomitu.com/vue-router/3.2.0/vue-router.min.js',
+                'https://lib.baomitu.com/vuex/3.2.0/vuex.min.js',
+                'https://lib.baomitu.com/axios/0.21.0/axios.min.js',
+                'https://cdn.staticfile.org/element-ui/2.14.1/index.js'
             ]
         };
         // html中添加cdn
         config.plugin('html').tap(args => {
+            args[0].title = "weiFramework";
             args[0].cdn = cdn;
             return args;
         })
@@ -51,6 +52,7 @@ module.exports = {
     publicPath: IS_PROD ? process.env.VUE_APP_PUBLIC_PATH : "/", // 设置打包文件相对路径
     // outputDir: `dist-${process.env.NODE_ENV}`,
     // assetsDir: "", // 相对于outputDir的静态资源(js、css、img、fonts)目录
+    // indexPath:'index.html', //
     productionSourceMap: false,  // 设置上线后是否加载webpack文件
     devServer: {
         // overlay: { // 让浏览器 overlay 同时显示警告和错误
